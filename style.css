@@ -1,0 +1,169 @@
+body {
+  color: aliceblue;
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+
+}
+body * {
+  font-family: "inter", system-ui;
+  color: var(--text-color);
+}
+p{
+  font-size:smaller
+}
+:root {
+  --text-color: #ffffff;
+  --bg-url: url(./assets/assets/bg-mobile.jpg);/*Eu vi só depois que eu coloquei dentro de 2 pastas*/
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --switch-bg-url: url(./assets/assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --switch-bg-url: url(./assets/assets/sun.svg);
+}
+.light #Switch button {/*essa partei eu fiquei no youtube p fazer*/
+  animation: slide-in 0.4s forwards;
+  
+}
+#container {
+  width: 360px;
+  margin: auto;
+  margin-top: 27px;
+  padding: 0 24px;
+}
+#profile img {
+  width: 112px;
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile p {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+}
+#Switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+#Switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 50;
+  z-index: 1;
+  animation: slide-out 0.4s forwards;
+}
+#Switch spam {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: var(--stroke-color);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 10px;
+}
+ul li a {
+  display: flex;
+  height: 2px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: var(--surface-color);
+  border: 2px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-radius: 25px;
+}
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid var(--text-color);
+}
+#profile img :hover {
+}
+
+#social-links {
+  gap: 10px;
+  font-size: 48px;
+  justify-content: center;
+  display: flex;
+}
+#social-links1 a:hover {
+  background: rgba(145, 143, 143, 0.5);
+  padding: 16px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+#social-links2 a:hover {
+  background: rgba(145, 143, 143, 0.5);
+  padding: 16px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+#social-links3 a:hover {
+  background: rgba(145, 143, 143, 0.5);
+  padding: 16px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes slide-in {
+  from {
+    right: 0;
+  }
+  to {
+    right: 50%;
+  }
+  }
+  @keyframes slide-out {
+  from {
+    right: 50%;
+  }
+  to {
+    right: 0;
+  }
+  }
+footer {
+  text-align: center;
+  padding: 24px;
+  margin-top: 24px;
+}
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(assets/assets/bg-desktop.jpg)
+  }
+   .light {
+    --bg-url: url(assets/assets/bg-desktop-light.jpg)
+  }
+}
